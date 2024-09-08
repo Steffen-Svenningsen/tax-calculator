@@ -7,8 +7,28 @@
     <script src="https://unpkg.com/mojocss"></script>
     <script src="script.js" defer></script>
 </head>
-<body>
-
+<body class="d-flex flex-col a-items-center j-content-center pa-2 h-100vh box-s-border">
+    <div class="tax-calculator pa-6 bg-c-white:-5 rounded-md box-s-border">
+        <header>
+            <h1>Tax Calculator</h1>
+        </header>
+        <form class="d-flex flex-col gap-4">
+            <div class="input-wrapper d-flex flex-col gap-1">
+                <label for="money">Monetary amount</label>
+                <input class="border-2 border-s-solid border-c-black rounded-sm pa-2" id="money" name="money" type="number" placeholder=" e.g. 40000">
+            </div>
+            <div class="input-wrapper d-flex flex-col gap-1">
+                <label for="tax">Tax percentage</label>
+                <input class="border-2 border-s-solid border-c-black rounded-sm pa-2" id="tax" name="tax" type="number" placeholder=" e.g. 25">
+            </div>
+        </form>
+        <button class="pa-3 bg-c-green:+8 rounded-sm cursor-pointer w-100% mt-4" onclick="calculateResult()">Calculate</button>
+        <div id="resultContainer" class="d-none flex-col pa-2 border-1 rounded-sm mt-4 border-c-red:+5 bg-c-white">
+            <p id="errorMsg" class="ma-0 text-c-red:+5"></p>
+            <p id="taxAmount" class="ma-0 text-75"></p>
+            <p id="result" class="ma-0 mt-2"></p>
+        </div>
+    </div>
 
     <!-- Initialize Mojo CSS -->
     <script>
